@@ -27,9 +27,9 @@ boolean isTandemRepeat(String inputString) {
     String firstString = inputString.substring(0, halfLength);
     String secondString = inputString.substring(halfLength);
     
-    System.out.println("Halfway: " + halfLength);
-    System.out.println("First string: " + firstString);
-    System.out.println("Second string: " + secondString);
+    //System.out.println("Halfway: " + halfLength);
+    //System.out.println("First string: " + firstString);
+    //System.out.println("Second string: " + secondString);
     
     return (firstString.equals(secondString));
 }
