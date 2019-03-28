@@ -1,0 +1,35 @@
+/* Coding exercise from codesignal.com 2019-03-28
+ * Determine whether the given string can be obtained by one concatenation of some string to itself.
+ *
+ * Example
+ *   For inputString = "tandemtandem", the output should be
+ *   isTandemRepeat(inputString) = true;
+ *   For inputString = "qqq", the output should be
+ *   isTandemRepeat(inputString) = false;
+ *   For inputString = "2w2ww", the output should be
+ *   isTandemRepeat(inputString) = false.
+ *
+ * Input/Output
+ *
+ *   [execution time limit] 3 seconds (java)
+ *
+ *   [input] string inputString
+ *
+ *   Guaranteed constraints:
+ *   2 ≤ inputString.length ≤ 20.
+ *
+ *   [output] boolean
+ *       true if inputString represents a string concatenated to itself, false otherwise.
+ */
+
+boolean isTandemRepeat(String inputString) {
+    int halfLength = inputString.length() / 2;
+    String firstString = inputString.substring(0, halfLength);
+    String secondString = inputString.substring(halfLength);
+    
+    System.out.println("Halfway: " + halfLength);
+    System.out.println("First string: " + firstString);
+    System.out.println("Second string: " + secondString);
+    
+    return (firstString.equals(secondString));
+}
