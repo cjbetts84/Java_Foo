@@ -1,0 +1,49 @@
+/*
+ * Given an array of strings, return another array containing all of its longest strings.
+ *
+ * Example
+ *
+ * For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+ *  allLongestStrings(inputArray) = ["aba", "vcd", "aba"].
+ *
+ * Input/Output
+ * 
+ *   [execution time limit] 3 seconds (java)
+ *   [input] array.string inputArray
+ *      A non-empty array.
+ *      Guaranteed constraints:
+ *        1 ≤ inputArray.length ≤ 10,
+ *        1 ≤ inputArray[i].length ≤ 10.
+ *   [output] array.string
+ *      Array of the longest strings, stored in the same order as in the inputArray.
+ */
+
+String[] allLongestStrings(String[] inputArray) {
+    int longest = -1;
+    int counter = 0;
+    int cursor = 0;
+
+    //Gather information on inputARray
+    for (String iterator : inputArray){
+        //Modify longest length and how often it was seen
+        if (longest < iterator.length()){
+            longest = iterator.length();
+            counter = 0;
+        }
+        
+        if (iterator.length() == longest){
+            counter++;
+        }
+    }   
+
+    String[] returnArray = new String[counter];
+    
+    //Populate the return array accordingly
+    for (String iterator : inputArray){
+        if (iterator.length() == longest){
+            returnArray[cursor++] = iterator;
+        }
+    }
+    
+    return returnArray;
+}
